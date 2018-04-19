@@ -1,10 +1,14 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const isProduction = 'production' === EmberApp.env();
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
-    // Add options here
+    sassOptions: {
+      sourceMap: false,
+      sourceMapEmbed: !isProduction
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
