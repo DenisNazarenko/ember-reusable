@@ -1,0 +1,11 @@
+{{#each options as |option|}}
+  {{#if (is-object option)}}
+    <option selected={{eq value option.value}} value={{option.value}}>
+      {{option.text}}
+    </option>
+  {{else}}
+    <option selected={{eq value option}} value={{option}}>
+      {{option}}
+    </option>
+  {{/if}}
+{{/each}}
